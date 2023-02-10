@@ -56,7 +56,6 @@ final class GameViewModel: ObservableObject {
         }
     }
     
-    
     func isSquareOccupied(in moves: [Move?], forIndex index: Int) -> Bool {
         return moves.contains(where: { $0?.boardIndex == index })
     }
@@ -76,7 +75,6 @@ final class GameViewModel: ObservableObject {
             }
         }
         
-        
         let humanMoves = moves.compactMap { $0 }.filter { $0.player == .human }
         let humanPositions = Set(humanMoves.map { $0.boardIndex })
         
@@ -88,7 +86,6 @@ final class GameViewModel: ObservableObject {
                 if isAvailable { return winPositions.first! }
             }
         }
-        
         
         let centerSquare = 4
         if !isSquareOccupied(in: moves, forIndex: centerSquare) {

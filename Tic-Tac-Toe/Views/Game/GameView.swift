@@ -45,7 +45,6 @@ enum Player {
     case human, cpu
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
